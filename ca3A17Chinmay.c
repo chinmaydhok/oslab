@@ -6,14 +6,14 @@ using namespace std;
 class job
 {
 	public:
-	int at;   	//arrival time
-	int bt;   	//burst time
-	int ready;	//to check arrival
+	int at;   	
+	int bt;   	
+	int ready;	
 	void get()
 	{
-		cout<<("Enter Arrival time :");
+		cout<<("Enter Arrival time of Process:\n");
 		cin>>at;
-		cout<<("Enter Burst time :");
+		cout<<("Enter Burst time of the process :\n");
 		cin>>bt;
 		ready=0;
 		
@@ -38,7 +38,7 @@ int Last(int arr[], int n, int x)
 int main()
 {
 	job p[100];
-	int tb=0;         //total burst time
+	int tb=0;         
 	int n;
 	int wt[100];
 	int w[100];
@@ -91,14 +91,14 @@ int main()
 		
 	}
 	
-	int ct[n];   //completion time
+	int ct[n];   
 	for(int i=1;i<=n;i++)
 	{
 		int y=w[i];
 		ct[i]=Last(w,tb1,y);
 	}
 	ct[1]=ct[1]+1;
-	int waiting[100];   //waiting time
+	int waiting[100];   
 	for(int i=1;i<=n;i++)
 	{
 		waiting[i]=ct[i]-at1[i]-p[i].bt+1;
@@ -109,7 +109,7 @@ int main()
 	{
 		cout<<"P["<<i<<"]"<<"          |   "<<ct[i]<<"               |"<<"   "<<waiting[i]<<endl;
 	}   
-	int tw=0;   //total waiting time
+	int tw=0;   
 	for(int i=1;i<=n;i++)
 	{
 		tw=tw+waiting[i];
